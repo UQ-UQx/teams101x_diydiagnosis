@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Team101x - DIY Diagnosis - Accordion</title>
+  <style>
+  /* Accordion Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  ul .inner {
+    padding-left: 1em;
+    overflow: hidden;
+    display: none;
+  }
+  ul .inner.show {
+    /*display: block;*/
+  }
+  ul li {
+    margin: .5em 0;
+  }
+  ul li a.toggle {
+    width: 100%;
+    display: block;
+    background: #3498db;
+    color: #fefefe;
+    padding: .75em;
+    border-radius: 0.15em;
+    transition: background .3s ease;
+  }
+  ul li a.toggle:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  /* Tag Styles */
+  .tagcloud ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  .tagcloud ul li {
+  	display: inline-block;
+  	margin: 0 0 .3em 1em;
+  	padding: 0;
+  }
+  .tagcloud ul li a {
+  	position: relative;
+  	display: inline-block;
+  	height: 30px;
+  	line-height: 30px;
+  	padding: 0 1em;
+  	background-color: #3498db;
+  	border-radius: 0 3px 3px 0;
+  	color: #fff;
+  	font-size: 13px;
+  	text-decoration: none;
+  	-webkit-transition: .2s;
+  	transition: .2s;
+  }
+  .tagcloud ul li a::before {
+  	position: absolute;
+  	top: 0;
+  	left: -15px;
+  	content: '';
+  	width: 0;
+  	height: 0;
+  	border-color: transparent #3498db transparent transparent;
+  	border-style: solid;
+  	border-width: 15px 15px 15px 0;
+  	-webkit-transition: .2s;
+  	transition: .2s;
+  }
+  .tagcloud ul li a::after {
+  	position: absolute;
+  	top: 50%;
+  	left: 0;
+  	z-index: 2;
+  	display: block;
+  	content: '';
+  	width: 6px;
+  	height: 6px;
+  	margin-top: -3px;
+  	background-color: #fff;
+  	border-radius: 100%;
+  }
+  .tagcloud ul li span {
+  	display: block;
+  	max-width: 150px;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	overflow: hidden;
+  }
+  .tagcloud ul li a:hover {
+  	background-color: #555;
+  	color: #fff;
+  }
+  .tagcloud ul li a:hover::before {
+  	border-right-color: #555;
+  }
+
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.5.js"></script>
+  <script>
+  $(window).load(function(){
+    $('.toggle').click(function(e) {
+      	e.preventDefault();
+
+        var $this = $(this);
+
+        if ($this.next().hasClass('show')) {
+            $this.next().removeClass('show');
+            $this.next().slideUp(350);
+        } else {
+            $this.parent().parent().find('li .inner').removeClass('show');
+            $this.parent().parent().find('li .inner').slideUp(350);
+            $this.next().toggleClass('show');
+            $this.next().slideToggle(350);
+        }
+    })
+  });
+
+  function expand(parentid, id, childid)
+  {
+    expand_for_tag(parentid);
+    expand_for_tag(id);
+    if (childid != "")
+    {
+      expand_for_tag(childid);
+    }
+  }
+
+  function expand_for_tag(id)
+  {
+    var $this = $('#'+id);
+    $this.parent().parent().find('li .inner').removeClass('show');
+    $this.parent().parent().find('li .inner').slideUp(350);
+    $this.next().toggleClass('show');
+    $this.next().slideToggle(350);
+  }
+  </script>
+</head>
+
+<body>
+<h2>TEAMS101x - DIY Diagnosis Tool </h2>
+  <div class="tagcloud">
+  	<ul>
+  		<li><a href="#" onClick="expand('ProjectProblems','Clarity','')"><span>Clarity</span></a></li>
+  		<li><a href="#" onClick="expand('ProjectProblems','Commitment','')"><span>Commitment</span></a></li>
+      <li><a href="#" onClick="expand('TeamMembers','Communication','')"><span>Communication</span></a></li>
+      <li><a href="#" onClick="expand('TeamMembers','Conflict','')"><span>Conflict</span></a></li>
+      <li><a href="#" onClick="expand('ProjectOutput','FinishOnTime','')"><span>Finish on Time</span></a></li>
+  		<li><a href="#" onClick="expand('ProjectProblems','Ideas','')"><span>Ideas</span></a></li>
+      <li><a href="#" onClick="expand('ProjectProblems','Ideas','Creativity')"><span>Lack of Creativity</span></a></li>
+      <li><a href="#" onClick="expand('ProjectProblems','Clarity','')"><span>No Team Action</span></a></li>
+  		<li><a href="#" onClick="expand('TeamMembers','Leader','NoLeader')"><span>No Leader</span></a></li>
+  		<li><a href="#" onClick="expand('ProjectProblems','Clarity','')"><span>Team Meetings</span></a></li>
+  		<li><a href="#" onClick="expand('ProjectProblems','Clarity','ProjectRequirements')"><span>Vague Project Requirements</span></a></li>
+  	</ul>
+  </div>
+
+  <ul class="accordion">
+
+  <li>
+    <a class="toggle" href="javascript:void(0);" id="ProjectProblems">Problems with the project</a>
+    <ul class="inner">
+      <li>
+        <a href="#" class="toggle" id="Clarity">Lack of clarity</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle" id="ProjectRequirements">The project requirements are vague and/or my team is not sure as to what the project should achieve.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Review the section on project planning.</li>
+                  <li>Familiarise yourself with the project by:</li>
+                    <ul>
+                      <li>Looking at the project brief or talking to the client.</li>
+                      <li>Researching other projects that may be similar to yours.</li>
+                      <li>Drawing up and agreeing project objectives.</li>
+                    </ul>
+                    <li>List aspects of the project that you find confusing and discuss these with your team and/or client.</li>
+                  </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">After team meetings I can’t quite recall what happened and/or I’m not sure what I am supposed to achieve by the next meeting.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Revisit the section on effective team meetings.</li>
+                  <li>Ensure that you have a timeline or a Gantt chart and that it’s available to all the team members.</li>
+                  <li>Use an action list to make sure that any tasks to be carried out are written down. Assign responsibilities to these tasks and set a deadline for each.  Make sure that all team members have access to this list.</li>
+                  <li>Try using the Four-Step Project checklist to provide your meetings with more structure.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">At team meetings my team doesn’t really get much work done and there doesn’t seem to be a sense of purpose.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that a meeting agenda is circulated prior to the meeting.</li>
+                  <li>Ensure that you have a meeting chair and that they are aware of their responsibilities.</li>
+                  <li>Revisit the section on effective team meetings.</li>
+                  <li>Make use of a whiteboard in team discussions. This way all team members can get involved in the discussion process.</li>
+                  <li>Make sure that a team member is taking minutes and that these are distributed after the meeting.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="toggle" id="Commitment">Lack of commitment</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle">Team members were given tasks but no one seems to be doing anything.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that tasks and deadlines have been agreed and accepted by all team members</li>
+                  <li>Call a progress meeting and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
+                  <li>At the progress meeting, agree stages for completion in time for the next meeting.  Ask team members to report back on their tasks at this meeting.</li>
+                  <li>Revisit Possible Causes of conflict – Losing interest and Lencioni’s 5 dysfunctions of teams.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">I’ve sent out an important email/SMS/Facebook post but I’ve received no response.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that you have the correct contact details.</li>
+                  <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                  <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                  <li>Revisit the section on effective communication.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="toggle" id="Ideas">Lack of ideas</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle" id="Creativity">My team does not appear to be very creative.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>revisit the section on team decision making</li>
+                  <li>employ a creativity technique https://en.wikipedia.org/wiki/Creativity_techniques</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">My team doesn’t explore alternatives and/or we get fixed on an idea without sufficient analysis.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Revisit the section on decision making and utilise the techniques.</li>
+                  <li>When a decision point arises, ensure that the team acknowledges that there are options.  Use a whiteboard in meetings to identify and explore these options. </li>
+                  <li>Ensure that you are assertive in putting forward your ideas.</li>
+                  <li>Ensure that your team members have a voice and are being listened to.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>You and your team may need to work on assertiveness and cooperation. </li>
+                  <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for ‘air time’ and a considered discussion of your ideas before the team moves on. </li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class="toggle" href="javascript:void(0);" id="ProjectOutput">Lack of project output(s)</a>
+    <ul class="inner">
+      <li>
+        <a href="#" class="toggle" id="FinishOnTime">I’m not sure that my team will finish on time.</a>
+        <div class="inner">
+          <p>
+            <ol>
+              <li>Ensure the team knows what is required and tasks are clear.</li>
+              <li>Construct a timeline or Gantt chart with objectives, tasks, and deadlines clearly defined.</li>
+              <li>Ensure that all tasks have been allocated. </li>
+              <li>Give someone the responsibility of directing the efforts of the team and ensuring that tasks are completed on time.</li>
+              <li>Plan regular team meetings to ensure progress is satisfactory.</li>
+            </ol>
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" class="toggle">We don’t seem to have produced anything.</a>
+        <div class="inner">
+          <p>
+            <ol>
+              <li>Revisit developing SMART goals.</li>
+              <li>Review your project schedule or Gantt Chart and ensure that you are on time. </li>
+              <li>Consider breaking down tasks into sub-tasks that will produce intermediate outputs that can be used as stage milestones.</li>
+              <li>Revisit Lencioni’s 5 dysfunctions of teams.</li>
+            </ol>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class="toggle" href="javascript:void(0);" id="TeamMembers">Problems with team members</a>
+    <ul class="inner">
+      <li>
+        <a href="#" class="toggle" id="Conflict">Interpersonal conflict</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>You and your team may need to work on assertiveness and cooperation. </li>
+                  <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for ‘air time’ and a considered discussion of your ideas before the team moves on. </li>
+                  <li>Revisit Possible Causes of Conflict – People being actively critical.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">Some team members never seem to complete their work on time and/or to a reasonable standard.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that they are aware of their tasks, expected standards, and associated timelines. </li>
+                  <li>Openly discuss the issue at a team meeting.  Details of how to do this can be found in Social Loafing.</li>
+                  <li>Revisit Possible Causes of Conflict, as there are many possible causes (and brief solutions) here.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">Some team members miss team meetings without a justifiable reason.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that your Team Charter clearly outlines expectations for team meeting attendance.</li>
+                  <li>Ensure that they aware of the team meeting times – consider reminding them by email or SMS.</li>
+                  <li>Revisit Possible Causes of Conflict as there are many possible causes (and brief solutions) here.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">There is a lack of trust within my team and/or the team seems to be split into factions.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that management processes are transparent, all team members have access to all project documents, and communications are sent to everyone.</li>
+                  <li>Revisit Lencioni’s five dysfunctions of teams.</li>
+                  <li>Ensure that the team meets frequently and that concerns are voiced so that the team can discuss openly.  Practice engaged listening.</li>
+                  <li>Revisit the section on conflict resolution.</li>
+                  <li>Consider using a team facilitator if this situation continues.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">My team is in a state of conflict.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Revisit the possible causes of the conflict and take the team conflict survey.</li>
+                  <li>Call a team meeting specifically to address the issues and revisit the team charter and the team rules.</li>
+                  <li>Give team members a chance to air their issues.  Follow the procedure for conflict resolution.</li>
+                  <li>Consider using a team facilitator.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="toggle" id="Leader">Roles/leadership</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle" id="NoLeader">My team has no leader.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>You might not need a leader.  Evaluate team performance and unless there are problems or dysfunctions (Lencioni’s 5 dysfunctions of teams), there is nothing that you need to do.</li>
+                  <li>If your team is not performing then a leader should be nominated/elected.  Call a meeting to openly discuss the issues and decide a strategy for moving forward.</li>
+                  <li>Consider taking the position yourself.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">I don’t feel that my team leader is up to the task.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Initially discuss your concerns directly with the team leader in a one-on-one meeting.</li>
+                  <li>At this meeting offer to assist them as necessary.</li>
+                  <li>If the situation does not change, call a team meeting and discuss the issues as a team. </li>
+                  <li>Consider calling in a team facilitator.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="toggle" id="Communication">Communication</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>You and your team may need to work on assertiveness and cooperation.</li>
+                  <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for ‘air time’ and a considered discussion of your ideas before the team moves on.</li>
+                  <li>Revisit Possible Causes of Conflict – People being actively critical.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">Some team members miss team meetings without a justifiable reason.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that your Team Charter clearly outlines expectations for team meeting attendance.</li>
+                  <li>Ensure that they aware of the team meeting times – consider reminding them by email or SMS.</li>
+                  <li>Revisit Possible Causes of Conflict, as there are many possible causes (and brief solutions) here.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">I’ve sent out an important email/SMS/Facebook post but I’ve received no response.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that you have the correct contact details. </li>
+                  <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                  <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                  <li>Revisit the section on effective communication.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">My team needs to prepare a report and we are having trouble achieving this.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Construct a template for your report complete with a table of contents. </li>
+                  <li>Decide file naming conventions and document storage procedures. </li>
+                  <li>Assign sections of the report to team members with agreed dates for completion.</li>
+                  <li>Nominate a team member to amalgamate the sections. </li>
+                  <li>Schedule a review session for the whole team where the report can be proofed and any changes agreed by the team.  </li>
+                  <li>Support team members for whom English may not be their first language as necessary.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="toggle">Lack of Commitment</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle">Team members were given tasks but no one seems to be doing anything.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that tasks and deadlines have been agreed and accepted by all team members</li>
+                  <li>Call a progress meeting and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
+                  <li>At the progress meeting, agree stages for completion in time for the next meeting.  Ask team members to report back on their tasks at this meeting.</li>
+                  <li>Revisit Possible Causes of conflict – Losing interest and Lencioni’s 5 dysfunctions of teams.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="toggle">I’ve sent out an important email/SMS/Facebook post but I’ve received no response.</a>
+            <div class="inner">
+              <p>
+                <ol>
+                  <li>Ensure that you have the correct contact details.</li>
+                  <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                  <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                  <li>Revisit the section on effective communication.</li>
+                </ol>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>
