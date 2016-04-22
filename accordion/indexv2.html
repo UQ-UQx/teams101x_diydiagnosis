@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.diybox {
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-style: solid;
+    border-width: 2px;
+    min-height: 208px;
+}
+
+.diybox_project {
+    background-color: #3399ff;
+    border-color: #0066cc;
+}
+
+.diybox_project_problem {
+    background-color: 	#80ccff;
+}
+
+.diybox_projectoutputs {
+    background-color: #00cc66;
+    border-color: #009933;
+}
+
+.diybox_teammembers {
+    background-color: #b3b3ff;
+    border-color: #4d4dff;
+}
+
+.diybox_teammembers_problem {
+    background-color: #ccccff;
+}
+
+.diybox_suggestion{
+    background-color: #ffffe6;
+    color: #000000;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 750px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+
+}
+@media only screen and (min-width: 900px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+.tree ul {
+    list-style: none outside none;
+}
+.tree li a {
+    line-height: 25px;
+}
+.tree > ul > li > a {
+    color: #3B4C56;
+    display: block;
+    font-weight: normal;
+    position: relative;
+    text-decoration: none;
+}
+.tree li.parent > a {
+    padding: 0 0 0 0px;
+    /*padding: 0 0 0 28px;*/
+}
+.tree li.parent > a:before {
+    background-image: url("plus_minus_icons.png");
+    background-position: 25px center;
+     content: "";
+    display: block;
+    height: 21px;
+    left: -25px;
+    position: absolute;
+    top: 2px;
+    vertical-align: middle;
+    width: 23px;
+}
+.tree ul li.active > a:before {
+    background-position: 0 center;
+}
+.tree ul li ul {
+    border-left: 1px solid #D9DADB;
+    display: none;
+    margin: 0 0 0 12px;
+    overflow: hidden;
+    padding: 0 0 0 25px;
+}
+.tree ul li ul li {
+    position: relative;
+}
+.tree ul li ul li:before {
+    border-bottom: 1px dashed #E2E2E3;
+    content: "";
+    left: -20px;
+    position: absolute;
+    top: 12px;
+    width: 15px;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.5.js"></script>
+<script>
+$( document ).ready( function( ) {
+    $( '.tree li' ).each( function() {
+        if( $( this ).children( 'ul' ).length > 0 ) {
+            $( this ).addClass( 'parent' );
+        }
+    });
+
+    $( '.tree li.parent > a' ).click( function( ) {
+        $( this ).parent().toggleClass( 'active' );
+        $( this ).parent().children( 'ul' ).slideToggle( 'fast' );
+    });
+
+    $( '#all' ).click( function() {
+
+        $( '.tree li' ).each( function() {
+            $( this ).toggleClass( 'active' );
+            $( this ).children( 'ul' ).slideToggle( 'fast' );
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="row">
+<div class="col-4 col-m-12">
+  <div class="diybox diybox_project">
+    <h2>Problems with the project</h2>
+    <div class="tree">
+      <ul>
+        <li>
+          <a href="#">Lack of clarity</a>
+          <ul class="diybox_project_problem">
+            <li>
+              <a href="#">The project requirements are vague and/or my team is not sure as to what the project should achieve.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Review the section on <a target="_blank" href="/jump_to_id/56a39ebf730744bb968ace1089e918fa">project planning</a>.</li>
+                    <li><a href="#">Familiarise yourself with the project by:</a>
+                      <ul>
+                        <li>Looking at the project brief or talking to the client.</li>
+                        <li>Researching other projects that may be similar to yours.</li>
+                        <li>Drawing up and agreeing project objectives.</li>
+                      </ul>
+                      <li>List aspects of the project that you find confusing and discuss these with your team and/or client.</li>
+                    </ul>
+                  </li>
+            </li>
+            <li>
+              <a href="#">After team meetings I can't quite recall what happened and/or I'm not sure what I am supposed to achieve by the next meeting.</a>
+                  <ul class="diybox_suggestion" >
+                    <li>Revisit the section on <a target="_blank" href="/jump_to_id/142fb9d2fe2c498e8fcf25b7c27df458">effective team meetings</a>.</li>
+                    <li>Ensure that you have a <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">timeline or a Gantt chart</a> and that it's available to all the team members.</li>
+                    <li>Use an action list to make sure that any tasks to be carried out are written down. Assign responsibilities to these tasks and set a deadline for each.  Make sure that all team members have access to this list.</li>
+                    <li>Try using the <a target="_blank" href="/static/4_Step_Project_Checklist.docx">Four-Step Project checklist</a> to provide your meetings with more structure.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">At team meetings my team doesn't really get much work done and there doesn't seem to be a sense of purpose.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that a <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting agenda</a> is circulated prior to the meeting.</li>
+                    <li>Ensure that you have a <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting chair</a> and that they are aware of their responsibilities.</li>
+                    <li>Revisit the section on effective <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">team meetings</a>.</li>
+                    <li>Make use of a whiteboard in team discussions. This way all team members can get involved in the discussion process.</li>
+                    <li>Make sure that a team member is taking <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">minutes</a> and that these are distributed after the meeting.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">Lack of commitment</a>
+          <ul class="diybox_project_problem">
+            <li>
+              <a href="#">Team members were given tasks but no one seems to be doing anything.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that tasks and deadlines have been agreed and accepted by all team members</li>
+                    <li>Call a progress <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting</a> and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
+                    <li>At the progress meeting, agree stages for completion in time for the next meeting.  Ask team members to report back on their tasks at this meeting.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/75a6b9d8928149718225feba7b6ebc7e">Possible Causes of conflict </a> - Losing interest and <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's 5 dysfunctions of teams</a>.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">I've sent out an important email/SMS/Facebook post but I've received no response.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that you have the correct contact details.</li>
+                    <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                    <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                    <li>Revisit the section on <a target="_blank" href="/jump_to_id/e92e31a849734fc6a7112567e921ab5f">effective communication</a>.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" >Lack of ideas</a>
+          <ul class="diybox_project_problem">
+            <li>
+              <a href="#">My team does not appear to be very creative.</a>
+                  <ul class="diybox_suggestion">
+                    <li>revisit the section on <a target="_blank" href="/jump_to_id/09ceb6b4d8184602b225773515de8631">team decision making</a></li>
+                    <li>employ a creativity technique <a target="_blank" href="https://en.wikipedia.org/wiki/Creativity_techniques">https://en.wikipedia.org/wiki/Creativity_techniques</a></li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">My team doesn't explore alternatives and/or we get fixed on an idea without sufficient analysis.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Revisit the section on <a target="_blank" href="/jump_to_id/09ceb6b4d8184602b225773515de8631">decision making</a> and utilise the techniques.</li>
+                    <li>When a decision point arises, ensure that the team acknowledges that there are options.  Use a whiteboard in meetings to identify and explore these options. </li>
+                    <li>Ensure that you are <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertive</a> in putting forward your ideas.</li>
+                    <li>Ensure that your team members have a voice and are being <a target="_blank" href="/jump_to_id/82099dc96e884b61b96194a0433b8102">listened</a> to.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+                  <ul class="diybox_suggestion">
+                    <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>. </li>
+                    <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on. </li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-4 col-m-12">
+  <div class="diybox diybox_projectoutputs">
+    <h2>Problems with Project Output/s</h2>
+    <div class="tree">
+      <ul>
+        <li>
+          <a href="#" >I'm not sure that my team will finish on time.</a>
+              <ul class="diybox_suggestion">
+                <li>Ensure the team knows what is required and tasks are clear.</li>
+                <li>Construct a <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">timeline</a> or Gantt chart with objectives, tasks, and deadlines clearly defined.</li>
+                <li>Ensure that all tasks have been allocated. </li>
+                <li>Give someone the <a target="_blank" href="/jump_to_id/142fb9d2fe2c498e8fcf25b7c27df458">responsibility</a> of directing the efforts of the team and ensuring that tasks are completed on time.</li>
+                <li>Plan regular <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">team meetings</a> to ensure progress is satisfactory.</li>
+              </ul>
+        </li>
+
+        <li>
+          <a href="#">We don't seem to have produced anything.</a>
+              <ul class="diybox_suggestion">
+                <li>Revisit developing <a target="_blank" href="/jump_to_id/14cf7caa0d5c4ce7aeca3fc3ad810a61">SMART</a> goals.</li>
+                <li>Review your project <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">schedule</a> or Gantt Chart and ensure that you are on time. </li>
+                <li>Consider breaking down tasks into <a target="_blank" href="/jump_to_id/a20415101d96429880e7d219ac1b35e6">sub-tasks</a> that will produce intermediate outputs that can be used as stage milestones.</li>
+                <li>Revisit <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's 5 dysfunctions of teams</a>.</li>
+              </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-4 col-m-12">
+  <div class="diybox diybox_teammembers">
+    <h2>Problems with team members</h2>
+    <div class="tree">
+      <ul >
+        <li>
+          <a href="#" >Interpersonal conflict</a>
+          <ul class="diybox_teammembers_problem">
+            <li>
+              <a href="#">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+                  <ul class="diybox_suggestion">
+                    <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>. </li>
+                    <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on. </li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of Conflict</a> - People being actively critical.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">Some team members never seem to complete their work on time and/or to a reasonable standard.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that they are aware of their tasks, expected standards, and associated timelines. </li>
+                    <li>Openly discuss the issue at a team meeting.  Details of how to do this can be found in <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Social Loafing</a>.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of Conflict</a>, as there are many possible causes (and brief solutions) here.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">Some team members miss team meetings without a justifiable reason.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that your <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">Team Charter</a> clearly outlines expectations for team meeting attendance.</li>
+                    <li>Ensure that they aware of the team <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">meeting times</a> - consider reminding them by email or SMS.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of Conflict</a> as there are many possible causes (and brief solutions) here.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">There is a lack of trust within my team and/or the team seems to be split into factions.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that management processes are transparent, all team members have access to all project documents, and communications are sent to everyone.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's five dysfunctions of teams</a>.</li>
+                    <li>Ensure that the team meets frequently and that concerns are voiced so that the team can discuss openly.  Practice <a target="_blank" href="/jump_to_id/82099dc96e884b61b96194a0433b8102">engaged listening</a>.</li>
+                    <li>Revisit the section <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">on conflict resolution</a>.</li>
+                    <li>Consider using <a target="_blank" href="/jump_to_id/9054ee00c4664afea10ecca07477c78a">a team facilitator</a> if this situation continues.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">My team is in a state of conflict.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Revisit the <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">possible causes of the conflict</a> and take the team conflict survey.</li>
+                    <li>Call a team meeting specifically to address the issues and revisit the <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">team charter</a> and the <a target="_blank" href="/jump_to_id/74b2932fd1334a8eb874e2fdb3feb2ce">team rules</a>.</li>
+                    <li>Give team members a chance to air their issues.  Follow the procedure for <a target="_blank" href="/jump_to_id/44bb3de2d5f94a3e9d213226b6675de9">conflict resolution</a>.</li>
+                    <li>Consider using a <a target="_blank" href="/jump_to_id/9054ee00c4664afea10ecca07477c78a">team facilitator</a>.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">Roles/leadership</a>
+          <ul class="diybox_teammembers_problem">
+            <li>
+              <a href="#">My team has no leader.</a>
+                  <ul class="diybox_suggestion">
+                    <li>You might not need a <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">leader</a>.  Evaluate team performance and unless there are problems or dysfunctions (<a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's 5 dysfunctions of teams</a>), there is nothing that you need to do.</li>
+                    <li>If your team is not performing then a leader should be nominated/elected.  Call a meeting to openly discuss the issues and decide a strategy for moving forward.</li>
+                    <li>Consider taking the <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">position yourself</a>.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">I don't feel that my team leader is up to the task.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Initially discuss your concerns directly with the team leader in a <a target="_blank" href="/jump_to_id/44bb3de2d5f94a3e9d213226b6675de9">one-on-one meeting</a>.</li>
+                    <li>At this meeting offer to assist them as necessary.</li>
+                    <li>If the situation does not change, call a team meeting and discuss the issues as a team. </li>
+                    <li>Consider calling in <a target="_blank" href="/jump_to_id/9054ee00c4664afea10ecca07477c78a">a team facilitator</a>.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">Communication</a>
+          <ul class="diybox_teammembers_problem">
+            <li>
+              <a href="#">I feel that other team members are dismissive of my ideas and sometimes ignore me.</a>
+                  <ul class="diybox_suggestion">
+                    <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>.</li>
+                    <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of Conflict</a> - People being actively critical.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">Some team members miss team meetings without a justifiable reason.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that your <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">Team Charter</a> clearly outlines expectations for team meeting attendance.</li>
+                    <li>Ensure that they aware of the team <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">meeting times</a> - consider reminding them by email or SMS.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of Conflict</a>, as there are many possible causes (and brief solutions) here.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">I've sent out an important email/SMS/Facebook post but I've received no response.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that you have the correct contact details. </li>
+                    <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                    <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                    <li>Revisit the section on <a target="_blank" href="/jump_to_id/e92e31a849734fc6a7112567e921ab5f">effective communication</a>.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">My team needs to prepare a report and we are having trouble achieving this.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Construct a template for your report complete with a table of contents. </li>
+                    <li>Decide file naming conventions and document storage procedures. </li>
+                    <li>Assign sections of the report to team members with agreed dates for completion.</li>
+                    <li>Nominate a team member to amalgamate the sections. </li>
+                    <li>Schedule a review session for the whole team where the report can be proofed and any changes agreed by the team.  </li>
+                    <li>Support team members for whom English may not be their first language as necessary.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Lack of Commitment</a>
+          <ul class="diybox_teammembers_problem">
+            <li>
+              <a href="#">Team members were given tasks but no one seems to be doing anything.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that tasks and deadlines have been agreed and accepted by all team members</li>
+                    <li>Call a progress <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting</a> and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
+                    <li>At the progress meeting, agree stages for completion in time for the next meeting.  Ask team members to report back on their tasks at this meeting.</li>
+                    <li>Revisit <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Possible Causes of conflict</a> – Losing interest and <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's 5 dysfunctions of teams</a>.</li>
+                  </ul>
+            </li>
+            <li>
+              <a href="#">I've sent out an important email/SMS/Facebook post but I've received no response.</a>
+                  <ul class="diybox_suggestion">
+                    <li>Ensure that you have the correct contact details.</li>
+                    <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
+                    <li>At your next team meeting, address the issue and agree a time frame for responses to communication. </li>
+                    <li>Revisit the section on <a target="_blank" href="/jump_to_id/e92e31a849734fc6a7112567e921ab5f">effective communication</a>.</li>
+                  </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
