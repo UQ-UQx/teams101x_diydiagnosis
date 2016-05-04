@@ -1,0 +1,22 @@
+{
+  "name": "teams101x_diydiagnosis",
+  "version": "1.0.0",
+  "description": "Teams101x Diagnosis tool",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UQ-UQx/teams101x_diydiagnosis.git"
+  },
+  "author": "Ankith Konda, Aneesha Bakharia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UQ-UQx/teams101x_diydiagnosis/issues"
+  },
+  "homepage": "https://github.com/UQ-UQx/teams101x_diydiagnosis#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
