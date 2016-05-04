@@ -5,4 +5,4 @@ A self-help tool for use in teams101x for a learner to narrow down the causes of
 ![Desktop Demo Gif](https://tools.ceit.uq.edu.au/github_gifs/DIY_diagnosis_tool/teams101x_diy_diagnosis_demo1.gif)
 
 ###Mobile Demo
-![Mobile Demo Gif](https://tools.ceit.uq.edu.au/github_gifs/DIY_diagnosis_tool/teams101x_diy_diagnosis_demo1.gif)
+![Mobile Demo Gif](https://tools.ceit.uq.edu.au/github_gifs/DIY_diagnosis_tool/teams101x_diy_diagnosis_demo2.gif)
