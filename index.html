@@ -4,6 +4,8 @@
   <title></title>
   <script   src="https://code.jquery.com/jquery-1.7.2.min.js"   integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ="   crossorigin="anonymous"></script>
   <script   src="https://code.jquery.com/ui/1.10.0/jquery-ui.min.js"   integrity="sha256-hTpbeVXhgCmfO7nGcWp9d1kImKbzY6gN0Vo5u5wLuss="   crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -208,6 +210,7 @@ $( document ).ready( function( ) {
         e.preventDefault();
         $( this ).parent().toggleClass( 'active' );
         $( this ).parent().children( 'ul' ).slideToggle( 'fast' );
+        $( this ).find('span').toggleClass('fa-plus-square-o fa-minus-square-o')
     });
 
     $( '#all' ).click( function() {
@@ -229,7 +232,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_project">Lack of clarity</div>
             <ul class="custom_ul diybox_project_problem">
               <li>
-                <div class="headings headings_project_b">The project requirements are vague and/or my team is not sure as to what the project should achieve.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> The project requirements are vague and/or my team is not sure as to what the project should achieve.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Review the section on <a target="_blank" href="/jump_to_id/56a39ebf730744bb968ace1089e918fa">project planning</a>.</li>
                       <li>Familiarise yourself with the project by:
@@ -244,7 +247,7 @@ $( document ).ready( function( ) {
                 </li>
 
               <li>
-                <div class="headings headings_project_b">After team meetings I can't quite recall what happened and/or I'm not sure what I am supposed to achieve by the next meeting.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> After team meetings I can't quite recall what happened and/or I'm not sure what I am supposed to achieve by the next meeting.</div>
                     <ul class="custom_ul diybox_suggestion" >
                       <li>Revisit the section on <a target="_blank" href="/jump_to_id/142fb9d2fe2c498e8fcf25b7c27df458">effective team meetings</a>.</li>
                       <li>Ensure that you have a <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">timeline or a Gantt chart</a> and that it's available to all the team members.</li>
@@ -253,7 +256,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_project_b">At team meetings my team doesn't really get much work done and there doesn't seem to be a sense of purpose.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> At team meetings my team doesn't really get much work done and there doesn't seem to be a sense of purpose.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that a <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting agenda</a> is circulated prior to the meeting.</li>
                       <li>Ensure that you have a <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting chair</a> and that they are aware of their responsibilities.</li>
@@ -269,7 +272,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_project">Lack of commitment</div>
             <ul class="custom_ul diybox_project_problem">
               <li>
-                <div class="headings headings_project_b">Team members were given tasks but no one seems to be doing anything.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> Team members were given tasks but no one seems to be doing anything.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that tasks and deadlines have been agreed and accepted by all team members.</li>
                       <li>Call a progress <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting</a> and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
@@ -278,7 +281,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_project_b">I've sent out an important email/SMS/Facebook post but I've received no response.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I've sent out an important email/SMS/Facebook post but I've received no response.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that you have the correct contact details.</li>
                       <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
@@ -293,14 +296,14 @@ $( document ).ready( function( ) {
             <div class="headings headings_project">Lack of ideas</div>
             <ul class="custom_ul diybox_project_problem">
               <li>
-                <div class="headings headings_project_b">My team does not appear to be very creative.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> My team does not appear to be very creative.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Revisit the section on <a target="_blank" href="/jump_to_id/09ceb6b4d8184602b225773515de8631">team decision making.</a></li>
                       <li>Employ a <a target="_blank" href="https://en.wikipedia.org/wiki/Creativity_techniques">creativity technique.</a></li>
                     </ul>
               </li>
               <li>
-                <div class="headings headings_project_b">My team doesn't explore alternatives and/or we get fixed on an idea without sufficient analysis.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> My team doesn't explore alternatives and/or we get fixed on an idea without sufficient analysis.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Revisit the section on <a target="_blank" href="/jump_to_id/09ceb6b4d8184602b225773515de8631">decision making</a> and utilise the techniques.</li>
                       <li>When a decision point arises, ensure that the team acknowledges that there are options.  Use a whiteboard in meetings to identify and explore these options. </li>
@@ -309,7 +312,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_project_b">I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
+                <div class="headings headings_project_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>. </li>
                       <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on. </li>
@@ -361,7 +364,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_members">Interpersonal conflict</div>
             <ul class="custom_ul diybox_teammembers_problem">
               <li>
-                <div class="headings headings_members_b">I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>. </li>
                       <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on. </li>
@@ -369,7 +372,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">Some team members never seem to complete their work on time and/or to a reasonable standard.</div>
+                <div class="headings headings_members_b"> <span class="fa fa-plus-square-o" aria-hidden="true"></span> Some team members never seem to complete their work on time and/or to a reasonable standard.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that they are aware of their tasks, expected standards, and associated timelines. </li>
                       <li>Openly discuss the issue at a team meeting.  Details of how to do this can be found in <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">Social Loafing</a>.</li>
@@ -377,7 +380,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">Some team members miss team meetings without a justifiable reason.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> Some team members miss team meetings without a justifiable reason.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that your <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">Team Charter</a> clearly outlines expectations for team meeting attendance.</li>
                       <li>Ensure that they aware of the team <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">meeting times</a> - consider reminding them by email or SMS.</li>
@@ -385,7 +388,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">There is a lack of trust within my team and/or the team seems to be split into factions.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> There is a lack of trust within my team and/or the team seems to be split into factions.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that management processes are transparent, all team members have access to all project documents, and communications are sent to everyone.</li>
                       <li>Revisit <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's five dysfunctions of teams</a>.</li>
@@ -395,7 +398,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">My team is in a state of conflict.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> My team is in a state of conflict.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Revisit the <a target="_blank" href="/jump_to_id/ed653a30854342f7b4d6ca35ca5b3579">possible causes of the conflict</a> and take the team conflict survey.</li>
                       <li>Call a team meeting specifically to address the issues and revisit the <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">team charter</a> and the <a target="_blank" href="/jump_to_id/74b2932fd1334a8eb874e2fdb3feb2ce">team rules</a>.</li>
@@ -410,7 +413,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_members">Roles/leadership</div>
             <ul class="custom_ul diybox_teammembers_problem">
               <li>
-                <div class="headings headings_members_b">My team has no leader.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> My team has no leader.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>You might not need a <a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">leader</a>.  Evaluate team performance and unless there are problems or dysfunctions (<a target="_blank" href="/jump_to_id/05d9cfeceb394a6aa58634f82094da45">Lencioni's 5 dysfunctions of teams</a>), there is nothing that you need to do.</li>
                       <li>If your team is not performing then a leader should be nominated/elected.  Call a meeting to openly discuss the issues and decide a strategy for moving forward.</li>
@@ -418,7 +421,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">I don't feel that my team leader is up to the task.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I don't feel that my team leader is up to the task.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Initially discuss your concerns directly with the team leader in a <a target="_blank" href="/jump_to_id/44bb3de2d5f94a3e9d213226b6675de9">one-on-one meeting</a>.</li>
                       <li>At this meeting offer to assist them as necessary.</li>
@@ -433,7 +436,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_members">Communication</div>
             <ul class="custom_ul diybox_teammembers_problem">
               <li>
-                <div class="headings headings_members_b">I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I feel that other team members are dismissive of my ideas and sometimes ignore me.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>You and your team may need to work on <a target="_blank" href="/jump_to_id/111a5a8a54fc4f09ab57647befd7f816">assertiveness and cooperation</a>.</li>
                       <li>Openly state your concerns in the next team meeting and ask for resolution.  For example, ask for 'air time' and a considered discussion of your ideas before the team moves on.</li>
@@ -441,7 +444,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">Some team members miss team meetings without a justifiable reason.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> Some team members miss team meetings without a justifiable reason.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that your <a target="_blank" href="/jump_to_id/11607b9233494d0492f2355d69efc1bf">Team Charter</a> clearly outlines expectations for team meeting attendance.</li>
                       <li>Ensure that they aware of the team <a target="_blank" href="/jump_to_id/2c398eab45d2420ca80583137a8d1367">meeting times</a> - consider reminding them by email or SMS.</li>
@@ -449,7 +452,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">I've sent out an important email/SMS/Facebook post but I've received no response.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I've sent out an important email/SMS/Facebook post but I've received no response.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that you have the correct contact details. </li>
                       <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
@@ -458,7 +461,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">My team needs to prepare a report and we are having trouble achieving this.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> My team needs to prepare a report and we are having trouble achieving this.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Construct a template for your report complete with a table of contents. </li>
                       <li>Decide file naming conventions and document storage procedures. </li>
@@ -474,7 +477,7 @@ $( document ).ready( function( ) {
             <div class="headings headings_members">Lack of Commitment</div>
             <ul class="custom_ul diybox_teammembers_problem">
               <li>
-                <div class="headings headings_members_b">Team members were given tasks but no one seems to be doing anything.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> Team members were given tasks but no one seems to be doing anything.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that tasks and deadlines have been agreed and accepted by all team members.</li>
                       <li>Call a progress <a target="_blank" href="/jump_to_id/eb3291a61fec44068a279560821219fc">meeting</a> and address the issues as a team.  Be prepared to revise allocations and timelines as necessary.</li>
@@ -483,7 +486,7 @@ $( document ).ready( function( ) {
                     </ul>
               </li>
               <li>
-                <div class="headings headings_members_b">I've sent out an important email/SMS/Facebook post but I've received no response.</div>
+                <div class="headings headings_members_b"><span class="fa fa-plus-square-o" aria-hidden="true"></span> I've sent out an important email/SMS/Facebook post but I've received no response.</div>
                     <ul class="custom_ul diybox_suggestion">
                       <li>Ensure that you have the correct contact details.</li>
                       <li>Try a different method of communication.  For example, if you sent an email, try calling or following up with an SMS asking for a response. </li>
@@ -499,7 +502,6 @@ $( document ).ready( function( ) {
   </div>
 
 </div>
-
 
 <script type="text/javascript">
 
